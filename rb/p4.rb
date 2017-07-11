@@ -7,8 +7,18 @@ Find the largest palindrome made from the product of
 two 3-digit numbers.
 =end
 
-produto = []
-produto_contra = []
-maior_produto = 999 * 999
+def palindrome(a,b)
+	palinds = []
 
-palindrome --> a * b --> produto == produto_contra
+	for a in 100..999
+		for b in 100..999
+			palind = (a*b).to_s
+			if palind == palind.reverse && palind != "0"
+				palinds << palind
+			end
+		end
+	end
+	return palinds.uniq.sort_by(&:to_i)
+end
+
+puts palindrome(999,999)
