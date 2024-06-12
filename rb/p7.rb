@@ -11,3 +11,5 @@ while primes.count != 10001
   primes << counter if previous.none? { |nr| counter % nr == 0 }
   previous << counter
 end
+
+result = primes.last
